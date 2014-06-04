@@ -11,8 +11,7 @@ end
 
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
-  #  page.body is the entire content of the page as a string.
-  flunk "Unimplemented"
+  page.text.should match(/#{e1}.*#{e2}/)
 end
 
 Then /I should(nt)? see the movies with the following ratings: (.*)/ do |hidden, ratings|
